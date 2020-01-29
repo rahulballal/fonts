@@ -14,10 +14,19 @@ Run ``./install.sh`` to install all Powerline Fonts or see the documentation_ fo
 Quick installation
 ------------------
 
-You can copy and paste the commands to your terminal. Comments are fine too.
+If you are running a Debian or Ubuntu based Linux distribution, there should
+be a package available to install the Powerline Fonts with the following command:
+::
+	sudo apt-get install fonts-powerline
+
+For fedora (tested on 28) or redhat based Linux distribution, there should also be a package available to install with the following command:
+::
+	sudo dnf install powerline-fonts
+	
+On other environments, you can copy and paste these commands to your terminal. Comments are fine too.
 ::
     # clone
-    git clone https://github.com/powerline/fonts.git
+    git clone https://github.com/powerline/fonts.git --depth=1
     # install
     cd fonts
     ./install.sh
@@ -25,6 +34,15 @@ You can copy and paste the commands to your terminal. Comments are fine too.
     cd ..
     rm -rf fonts
 
+Uninstall
+---------
+
+Run ``./uninstall.sh`` to uninstall all Powerline Fonts. You can also copy
+the quick installation commands changing only the line ``./install.sh`` to
+``./uninstall.sh``.
+
+In both cases, please make sure you are working with the exact same version
+of Powerline fonts you had checked out while installing.
 
 Font Families
 -------------
@@ -41,14 +59,14 @@ Font Families
  Droid Sans Mono for Powerline           Droid Sans Mono           Apache License, Version 2.0
  Droid Sans Mono Dotted for Powerline    Droid Sans Mono Dotted    Apache License, Version 2.0
  Droid Sans Mono Slashed for Powerline   Droid Sans Mono Slashed   Apache License, Version 2.0
- Fura Mono Powerline                     Fira Mono                 SIL OPEN FONT LICENSE Version 1.1
+ Fira Mono for Powerline                 Fira Mono                 SIL OPEN FONT LICENSE Version 1.1
  Go Mono for Powerline                   Go Mono                   Go's License
  Hack                                    Hack                      SIL OFL, v1.1 + Bitstream License
  Inconsolata for Powerline               Inconsolata               SIL Open Font License, Version 1.0
  Inconsolata-dz for Powerline            Inconsolata-dz            SIL Open Font License, Version 1.0
  Inconsolata-g for Powerline             Inconsolata-g             SIL Open Font License, Version 1.0
  Input Mono                              Input Mono                `Input’s license <http://input.fontbureau.com/license/>`_
- Literation Mono Powerline               Liberation Mono           SIL Open Font License, Version 1.1
+ Liberation Mono Powerline               Liberation Mono           SIL Open Font License, Version 1.1
  ProFontWindows                          ProFont for Powerline     MIT License
  Meslo for Powerline                     Meslo                     Apache License, Version 2.0
  Source Code Pro for Powerline           Source Code Pro           SIL Open Font License, Version 1.1
@@ -73,7 +91,7 @@ Fontconfig
 ----------
 
 In some distributions, Terminess Powerline is ignored by default and must be 
-explicitly allowed. A fontconfig file is provided which enables it. Copy this 
-file from the fontconfig directory to your home folder under 
-``~/.config/fontconfig/conf.d`` (create it if it doesn't exist) and re-run 
-``fc-cache -vf``.
+explicitly allowed. A fontconfig file is provided which enables it. Copy `this
+file <https://github.com/powerline/fonts/blob/master/fontconfig/50-enable-terminess-powerline.conf>`_
+from the fontconfig directory to your home folder under ``~/.config/fontconfig/conf.d`` 
+(create it if it doesn't exist) and re-run ``fc-cache -vf``.
